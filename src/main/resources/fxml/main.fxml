@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      fx:controller="com.taaxocm.io.Controller"
+      spacing="10.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+    </padding>
+    <children>
+        <HBox spacing="10.0">
+            <children>
+                <TextField editable="false" focusTraversable="false" prefHeight="26.0" prefWidth="300.0"
+                           promptText="Image path" text="${controller.imagePathText}"/>
+                <Button fx:id="browseBtn" defaultButton="true" focusTraversable="false"
+                        mnemonicParsing="false" prefWidth="84.0" text="Browse">
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Button>
+            </children>
+        </HBox>
+        <HBox spacing="10.0">
+            <children>
+                <Slider fx:id="qualitySlider" blockIncrement="0.1"
+                        disable="${controller.qualityLevelSliderDisable}" majorTickUnit="0.1" max="1.0"
+                        prefHeight="38.0" prefWidth="300.0" showTickLabels="true" showTickMarks="true"
+                        value="0.5"/>
+                <Button fx:id="compressBtn" mnemonicParsing="false" prefWidth="84.0" text="Compress">
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Button>
+            </children>
+        </HBox>
+        <Label alignment="CENTER" contentDisplay="CENTER"
+               disable="${controller.qualityLevelLabelDisable}" prefHeight="18.0" prefWidth="394.4"
+               text="${controller.qualityLevelText}"/>
+    </children>
+</VBox>
